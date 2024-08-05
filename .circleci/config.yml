@@ -1,11 +1,10 @@
-version: 2
-executorType: machine
+
+version: 2.1
 jobs:
   build:
-    working_directory: ~/source
     docker:
-    machine:
-      image: circleci/classic:edge
+      - image: cimg/base:current
+    resource_class: wzzqbhzswf4xm6t6utbeg/socpolicycli"
     steps:
       - checkout
       - run: docker run --env gh_token=${GITHUB_TOKEN} --env gh_user=${GITHUB_USER} --env gh_email=${GITHUB_EMAIL} --env gh_repo=${GITHUB_REPO} ${COMPLY_APP_IMAGE}
